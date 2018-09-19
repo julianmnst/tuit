@@ -17,6 +17,7 @@ $app->get('/', function (Request $request, Response $response, array $args) {
 
 $app->get('/tweets/[{name}]', function(Request $request, Response $response, array $args) {
 
+  // If no username is provided, return error and instructions
   if (is_null($args['name'])) {
     $response->getBody()->write('
       Please enter a <strong>valid</strong> Twitter Username <br>
@@ -26,6 +27,7 @@ $app->get('/tweets/[{name}]', function(Request $request, Response $response, arr
     return $response->withStatus(400);
   }
 
+  // Twitter API configuration
   $settings = array(
     'oauth_access_token' => "22108512-lxIdVWtFHwMiIkH5sN7o8vkLZITEZnUc93nqttZBW",
     'oauth_access_token_secret' => "4KchGiAgD45jGVCLrkUxJFXf8LHP4QkBZP1sqYQoZB2bA",
@@ -45,6 +47,7 @@ $app->get('/tweets/[{name}]', function(Request $request, Response $response, arr
 
   $result = [];
 
+  // Iterate over tweets and save and return the required information only
   foreach($tweets as $tweet){
     $t = [];
 
