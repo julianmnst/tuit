@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Slim 3</title>
+    <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <style>
+      body {
+        margin: 50px 0 0 0;
+        padding: 0;
+        width: 100%;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-align: center;
+        color: #aaa;
+        font-size: 18px;
+      }
+
+      h1 {
+        color: #719e40;
+        letter-spacing: -3px;
+        font-family: 'Lato', sans-serif;
+        font-size: 100px;
+        font-weight: 200;
+        margin-bottom: 0;
+      }
+
+      h3 {
+        color: #719e40;
+        font-family: 'Lato', sans-serif;
+        font-size: 30px;
+        font-weight: 200;
+        margin-bottom: 10;
+      }
+
+      a, a:visited {
+        color: #719e40;
+        text-decoration: none;
+      }
+
+      .container {
+        margin: auto;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .tweet {
+        border: 1px solid;
+        border-radius: 3px;
+        color: #777;
+        padding: 3px;
+        margin: auto;
+        margin-top: 5px;
+        max-width: 600px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tuit <i class="fab fa-twitter"></i></h1>
+    <div>fetching Tweets for my firends @<a href="https://www.aivo.co">Aivo</a></div>
+
+    <div class="container">
+      <h3>This tweets are being consumed from this endpoint:
+      </h3>
+      <h3 id="endpoint"></h3>
+      <input type="text" id="username">
+      <button id="get-tweets">Get Tweets</button>
+    </div>
+
+    <div id="container" class="container"></div>
+  </body>
+  <script type="text/javascript">
+    const baseUrl = 'http://localhost:8080/tweets/';
+
+    function callAjax(url, callback){
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function(){
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+          callback(xmlhttp.responseText);
+        }
+      }
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+    }
+
+    var container = document.getElementById('container');
+    var username = document.getElementById('username');
+    var endpoint = document.getElementById('endpoint');
+    var get_tweets = document.getElementById('get-tweets');
+
+    username.value = 'realDonaldTrump'
+
+    endpoint.innerHTML = baseUrl + username.value;
+
+    function getTweets() {
+      container.innerHTML = '';
+      callAjax(baseUrl + username.value, function(response){
+        var tweets = JSON.parse(response);
+        tweets.map(function(tweet) {
+          container.innerHTML +=
+          '<h3 class="tweet">'
+          + tweet.text
+          + '</h3>';
+        })
+      });
+    }
+
+    getTweets();
+
+    get_tweets.addEventListener('click', function(e) {
+      endpoint.innerHTML = baseUrl + username.value
+      getTweets();
+    })
+  </script>
+</html>
