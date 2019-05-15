@@ -1,0 +1,49 @@
+body {
+  margin: 50px 0 0 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #aaa;
+  font-size: 18px;
+}
+
+h1 {
+  color: #719e40;
+  letter-spacing: -3px;
+  font-family: 'Lato', sans-serif;
+  font-size: 100px;
+  font-weight: 200;
+  margin-bottom: 0;
+}
+
+h3 {
+  color: #719e40;
+  font-family: 'Lato', sans-serif;
+  font-size: 30px;
+  font-weight: 200;
+  margin-bottom: 10;
+}
+
+a, a:visited {
+  color: #719e40;
+  text-decoration: none;
+}
+
+.container {
+  margin: auto;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.tweet {
+  border: 1px solid;
+  border-radius: 3px;
+  color: #777;
+  padding: 3px;
+  margin: auto;
+  margin-top: 5px;
+  max-width: 600px;
+  text-align: center;
+}
