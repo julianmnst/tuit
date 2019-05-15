@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tuit Fetcher</title>
     <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -11,9 +12,9 @@
     <h1>Tuit <i class="fab fa-twitter"></i></h1>
 
     <div class="container">
-      <h3>This tweets are being consumed from this endpoint:
-      </h3>
-      <h3 id="endpoint"></h3>
+      <h5>This tweets are being consumed from this endpoint:
+      </h5>
+      <h5 id="endpoint"></h5>
       <input type="text" id="username">
       <button id="get-tweets">Get Tweets</button>
     </div>
@@ -21,7 +22,14 @@
     <div id="container" class="container"></div>
   </body>
   <script type="text/javascript">
-    const baseUrl = 'https://tuit-fetcher.herokuapp.com/tweets/';
+    const devUrl = 'http://localhost:8080/tweets/';
+    var baseUrl = 'https://tuit-fetcher.herokuapp.com/tweets/';
+
+    const devMode = true;
+
+    if (devMode) {
+      baseUrl = devUrl;
+    }
 
     function callAjax(url, callback){
       var xmlhttp = new XMLHttpRequest();
@@ -45,6 +53,7 @@
       container.innerHTML = '';
       callAjax(baseUrl + username.value, function(response){
         var tweets = JSON.parse(response);
+        console.log(tweets)
         tweets.map(function(tweet) {
           container.innerHTML +=
           '<h3 class="tweet">'

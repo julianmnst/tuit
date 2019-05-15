@@ -17,11 +17,10 @@ h1 {
   margin-bottom: 0;
 }
 
-h3 {
+h5 {
   color: #719e40;
   font-family: 'Lato', sans-serif;
-  font-size: 30px;
-  font-weight: 200;
+  font-weight: 600;
   margin-bottom: 10;
 }
 
@@ -46,4 +45,45 @@ a, a:visited {
   margin-top: 5px;
   max-width: 600px;
   text-align: center;
+}
+
+#get-tweets {
+  cursor: pointer;
+  border: none;
+  background-color: #719e40;
+  margin-left: 12px;
+  width: 90px;
+  height: 30px;
+  border-radius: 2px;
+  font-weight: bold;
+  box-shadow: 0 200px 200px -15px rgba(42,51,59,0.7), inset 0 -5px rgba(42,51,59,0.4);
+  transition: all 0.3s cubic-bezier(0, 0.35, 0.5, 1);
+}
+
+#get-tweets:hover {
+  outline: none;
+  transform: scale(1.23);
+  box-shadow: 0 22px 22px -15px rgba(42,51,59,0.7), inset 0 -5px rgba(42,51,59,0.4);
+}
+
+#get-tweets:focus,
+#get-tweets:active {
+  transform: scale(1);
+  box-shadow: 0 17px 17px -15px rgba(42,51,59,0.7), inset 0 -3px rgba(42,51,59,0.4);
+}
+
+#username {
+  font-weight: 500;
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+  height: 30px;
+  box-shadow: 0 200px 200px -15px rgba(42,51,59,0.7), inset 0 -5px rgba(42,51,59,0.4);
+  transition: box-shadow 1s;
+  background-color: #719e40;  
+}
+
+#username:hover, #username:focus {
+  box-shadow: 0px 6px 0px #103b14;
+  outline: none;
 }
