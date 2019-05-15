@@ -12,62 +12,13 @@
     <h1>Tuit <i class="fab fa-twitter"></i></h1>
 
     <div class="container">
-      <h5>This tweets are being consumed from this endpoint:
-      </h5>
-      <h5 id="endpoint"></h5>
-      <input type="text" id="username">
+      <h5>Enter a valid twitter username to fetch it's latest tweets</h5>
+      <input type="text" id="username" autocomplete="off">
       <button id="get-tweets">Get Tweets</button>
     </div>
 
     <div id="container" class="container"></div>
   </body>
-  <script type="text/javascript">
-    const devUrl = 'http://localhost:8080/tweets/';
-    var baseUrl = 'https://tuit-fetcher.herokuapp.com/tweets/';
-
-    const devMode = false;
-
-    if (devMode) {
-      baseUrl = devUrl;
-    }
-
-    function callAjax(url, callback){
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function(){
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-          callback(xmlhttp.responseText);
-        }
-      }
-      xmlhttp.open("GET", url, true);
-      xmlhttp.send();
-    }
-
-    var container = document.getElementById('container');
-    var username = document.getElementById('username');
-    var endpoint = document.getElementById('endpoint');
-    var get_tweets = document.getElementById('get-tweets');
-
-    endpoint.innerHTML = baseUrl + username.value;
-
-    function getTweets() {
-      container.innerHTML = '';
-      callAjax(baseUrl + username.value, function(response){
-        var tweets = JSON.parse(response);
-        console.log(tweets)
-        tweets.map(function(tweet) {
-          container.innerHTML +=
-          '<h3 class="tweet">'
-          + tweet.text
-          + '</h3>';
-        })
-      });
-    }
-
-    // getTweets();
-
-    get_tweets.addEventListener('click', function(e) {
-      endpoint.innerHTML = baseUrl + username.value
-      getTweets();
-    })
+  <script src="./index.js">
   </script>
 </html>

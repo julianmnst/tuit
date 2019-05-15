@@ -17,6 +17,13 @@ h1 {
   margin-bottom: 0;
 }
 
+body {
+  animation: appear 1s;
+  animation-fill-mode: forwards;
+  position: relative;
+  overflow: auto;
+}
+
 h5 {
   color: #719e40;
   font-family: 'Lato', sans-serif;
@@ -25,8 +32,12 @@ h5 {
 }
 
 a, a:visited {
-  color: #719e40;
+  color: #777;
   text-decoration: none;
+}
+
+.hidden {
+  display: none;
 }
 
 .container {
@@ -37,17 +48,46 @@ a, a:visited {
 }
 
 .tweet {
-  border: 1px solid;
+  font-size: 1.1em;
+  display: block;
+  border-bottom: 13px solid;
   border-radius: 3px;
-  color: #777;
+  border-color: #719e40;
+  background-color: #9dd660;
+  color: #fff;
   padding: 3px;
   margin: auto;
   margin-top: 5px;
   max-width: 600px;
   text-align: center;
+  animation: slide-up 1s normal forwards;
+  animation-iteration-count: 1;
+  z-index: 1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tweet:hover {
+  animation: scale-tweet 1s normal forwards;
+  animation-direction: initial; 
+  z-index: 100;
+}
+
+@keyframes scale-tweet {
+  from {
+    -ms-transform: scale(1,1); /* IE 9 */
+    -webkit-transform: scale(1,1); /* Safari */
+    transform: scale(1,1); /* Standard syntax */
+  }
+  to {
+    -ms-transform: scale(1.23); /* IE 9 */
+    -webkit-transform: scale(1.23); /* Safari */
+    transform: scale(1.23); /* Standard syntax */
+  }
 }
 
 #get-tweets {
+  color: white;
   cursor: pointer;
   border: none;
   background-color: #719e40;
@@ -58,6 +98,7 @@ a, a:visited {
   font-weight: bold;
   box-shadow: 0 200px 200px -15px rgba(42,51,59,0.7), inset 0 -5px rgba(42,51,59,0.4);
   transition: all 0.3s cubic-bezier(0, 0.35, 0.5, 1);
+  outline: none;
 }
 
 #get-tweets:hover {
@@ -73,6 +114,8 @@ a, a:visited {
 }
 
 #username {
+  text-align: center;
+  color: #fff;
   font-weight: 500;
   padding: 5px;
   border: none;
@@ -83,7 +126,31 @@ a, a:visited {
   background-color: #719e40;  
 }
 
-#username:hover, #username:focus {
+#username:focus {
   box-shadow: 0px 6px 0px #103b14;
   outline: none;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    top:400px;
+    text-shadow: 0px 5000px 50px black;
+  }
+  to {
+    opacity: 1;
+    top: 0px;
+    text-shadow: none;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }
