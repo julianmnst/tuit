@@ -59,7 +59,6 @@
   </head>
   <body>
     <h1>Tuit <i class="fab fa-twitter"></i></h1>
-    <div>fetching Tweets for my firends @<a href="https://www.aivo.co">Aivo</a></div>
 
     <div class="container">
       <h3>This tweets are being consumed from this endpoint:
@@ -89,8 +88,6 @@
     var username = document.getElementById('username');
     var endpoint = document.getElementById('endpoint');
     var get_tweets = document.getElementById('get-tweets');
-
-    username.value = 'realDonaldTrump'
 
     endpoint.innerHTML = baseUrl + username.value;
 

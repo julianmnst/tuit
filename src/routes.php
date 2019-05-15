@@ -17,7 +17,7 @@ $app->get('/', function (Request $request, Response $response, array $args) {
 
 $app->get('/tweets/[{name}]', function(Request $request, Response $response, array $args) {
 
-  if (is_null($args['name'])) {
+  if (!isset($args['name']) && is_null($args['name'])) {
     $response->getBody()->write('
       Please enter a <strong>valid</strong> Twitter Username <br>
       For example: <a href="http://localhost:8080/tweets/realDonaldTrump">http://localhost:8080/tweets/<strong>realDonaldTrump</strong></a>
