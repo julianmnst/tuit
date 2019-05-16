@@ -1,4 +1,4 @@
-const devUrl = 'http://localhost:8080/tweets/';
+const devUrl = `${window.location.href}tweets/`;
 const devMode = false;
 var baseUrl = 'https://tuit-fetcher.herokuapp.com/tweets/',
 container = document.getElementById('container'),
