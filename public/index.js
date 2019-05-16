@@ -1,5 +1,5 @@
 const devUrl = 'http://localhost:8080/tweets/';
-const devMode = false;
+const devMode = true;
 var baseUrl = 'https://tuit-fetcher.herokuapp.com/tweets/',
 container = document.getElementById('container'),
 username = document.getElementById('username'),
@@ -25,9 +25,20 @@ function getTweets() {
   callAjax(baseUrl + username.value, function(response){
     var tweets = JSON.parse(response);
     tweets = tweets.map(function(tweet) {
-      return '<div class="fade-in"><div class="hidden">'
-      + tweet.text
-      + '</div></div>';
+      let isReTweet = tweet.text.indexOf('RT') === 0;
+      let formattedTweet = '<div class="fade-in">'
+      + '<div class="hidden">';
+
+      formattedTweet += isReTweet ? tweet.text.replace('RT ', '') : tweet.text;
+      console.log(tweet)
+      if (isReTweet) {
+        formattedTweet += '<button class="retweet">RT</button';
+      }
+
+
+      formattedTweet += '</div></div>';
+
+      return formattedTweet;
     })
     container.innerHTML = tweets.join('')
     revealList(tweets, 200);

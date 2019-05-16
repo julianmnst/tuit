@@ -53,8 +53,8 @@ a, a:visited {
   border-bottom: 3px solid;
   border-radius: 3px;
   border-color: rgba(42,51,59,0.4);
-  background-color: #caf898;
-  color: rgb(0, 0, 0);
+  background-color: #6db422;
+  color: white;
   padding: 3px;
   margin: auto;
   margin-top: 3px;
@@ -75,6 +75,17 @@ a, a:visited {
 
 .fade-in {
   animation: slide-up 1s normal forwards;
+}
+
+button.retweet {
+  border: none;
+  outline: none;
+  cursor: none;
+  background-color: #fb1a1aad;
+  color: white;
+  position: relative;
+  left: 20px;
+  border-radius: 2px;
 }
 
 #get-tweets {
