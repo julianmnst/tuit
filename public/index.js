@@ -29,16 +29,16 @@ function getTweets() {
       let formattedTweet = '<div class="fade-in">'
       + '<div class="hidden">';
 
-      formattedTweet += isReTweet ? tweet.text.replace('RT ', '') : tweet.text;
-      console.log(tweet)
       if (isReTweet) {
-        formattedTweet += '<button class="retweet">RT</button';
+        formattedTweet += '<button class="retweet">RT</button><span class="rt-user">';
+        tweet.text = tweet.text.replace(':', ': </span><br/>')
       }
 
+      formattedTweet += isReTweet ? tweet.text.replace('RT ', '') : tweet.text;
 
       formattedTweet += '</div></div>';
 
-      return formattedTweet;
+      return parseLinks(formattedTweet);
     })
     container.innerHTML = tweets.join('')
     revealList(tweets, 200);

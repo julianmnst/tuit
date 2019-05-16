@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-  color: #719e40;
+  color: #6db422;
   letter-spacing: -3px;
   font-family: 'Lato', sans-serif;
   font-size: 100px;
@@ -22,6 +22,7 @@ body {
   animation-fill-mode: forwards;
   position: relative;
   overflow: auto;
+  font-family: 'Lato', sans-serif;
 }
 
 h5 {
@@ -32,8 +33,12 @@ h5 {
 }
 
 a, a:visited {
-  color: #777;
+  color: rgb(53, 50, 243);
   text-decoration: none;
+}
+
+a:hover {
+  color: rgb(36, 112, 182);
 }
 
 .hidden {
@@ -53,16 +58,19 @@ a, a:visited {
   border-bottom: 3px solid;
   border-radius: 3px;
   border-color: rgba(42,51,59,0.4);
-  background-color: #6db422;
-  color: white;
-  padding: 3px;
+  background-color: rgba(0, 255, 0, 0.055);
+  color: black;
+  padding: 20px;
   margin: auto;
   margin-top: 3px;
   max-width: 285px;
+  min-height: 50px;
   text-align: center;
   transition: all .3s;
   margin-top: 17px;
   margin-bottom: 17px;
+  cursor: pointer;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.568);
 }
 
 .tweet:hover {
@@ -71,6 +79,7 @@ a, a:visited {
   border-radius: 6px;
   border-color: rgba(42,51,59,0.4);
   box-shadow: 0 17px 17px -15px rgba(42,51,59,0.7);
+  cursor: pointer;
 }
 
 .fade-in {
@@ -80,12 +89,20 @@ a, a:visited {
 button.retweet {
   border: none;
   outline: none;
-  cursor: none;
-  background-color: #fb1a1aad;
+  background-color: #fb1a1acb;
   color: white;
-  position: relative;
-  left: 20px;
+  margin-right: 3px;
   border-radius: 2px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+button.retweet:hover {
+  box-shadow: 0px 3px 4px rgba(42,51,59,0.4)
+}
+
+.rt-user {
+  text-shadow: 0px 1px 4px black;
 }
 
 #get-tweets {
