@@ -21,7 +21,7 @@ $app->get('/tweets/[{name}]', function(Request $request, Response $response, arr
   if (!isset($args['name']) && is_null($args['name'])) {
     $response->getBody()->write('
       Please enter a <strong>valid</strong> Twitter Username <br>
-      For example: <a href="http://localhost:8080/tweets/realDonaldTrump">http://localhost:8080/tweets/<strong>realDonaldTrump</strong></a>
+      For example: <a href="http://localhost:8080/tweets/julians_mg">http://localhost:8080/tweets/<strong>julians_mg</strong></a>
     ');
 
     return $response->withStatus(400);
