@@ -42,30 +42,27 @@ a, a:visited {
 
 .container {
   margin: auto;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   width: 100%;
   text-align: center;
 }
 
 .tweet {
-  font-size: 1.1em;
+  font-size: 1em;
   display: block;
   border-bottom: 3px solid;
   border-radius: 3px;
   border-color: rgba(42,51,59,0.4);
-  background-color: #9dd660;
-  color: #fff;
+  background-color: #caf898;
+  color: rgb(0, 0, 0);
   padding: 3px;
   margin: auto;
-  margin-top: 5px;
-  max-width: 400px;
+  margin-top: 3px;
+  max-width: 285px;
   text-align: center;
-  transition: all 1s;
-  transition: all .2s ease-in-out;
-  animation-iteration-count: 1;
+  transition: all .3s;
   margin-top: 17px;
   margin-bottom: 17px;
-  box-shadow: 1px 20px 15px 1px #103b14;
 }
 
 .tweet:hover {
@@ -73,24 +70,11 @@ a, a:visited {
   border-bottom: 9px solid;
   border-radius: 6px;
   border-color: rgba(42,51,59,0.4);
-  box-shadow: 1px 20px 40px 1px #103b14;
+  box-shadow: 0 17px 17px -15px rgba(42,51,59,0.7);
 }
 
 .fade-in {
   animation: slide-up 1s normal forwards;
-}
-
-@keyframes scale-tweet {
-  from {
-    -ms-transform: scale(1,1); /* IE 9 */
-    -webkit-transform: scale(1,1); /* Safari */
-    transform: scale(1,1); /* Standard syntax */
-  }
-  to {
-    -ms-transform: scale(1.23); /* IE 9 */
-    -webkit-transform: scale(1.23); /* Safari */
-    transform: scale(1.23); /* Standard syntax */
-  }
 }
 
 #get-tweets {
@@ -114,7 +98,6 @@ a, a:visited {
   box-shadow: 0 22px 22px -15px rgba(42,51,59,0.7), inset 0 -5px rgba(42,51,59,0.4);
 }
 
-#get-tweets:focus,
 #get-tweets:active {
   transform: scale(1);
   box-shadow: 0 17px 17px -15px rgba(42,51,59,0.7), inset 0 -3px rgba(42,51,59,0.4);
@@ -124,17 +107,18 @@ a, a:visited {
   text-align: center;
   color: #fff;
   font-weight: 500;
+  font-size: 1em;
   padding: 5px;
   border: none;
   border-radius: 2px;
   height: 30px;
   box-shadow: 0 200px 200px -15px rgba(42,51,59,0.7), inset 0 -5px rgba(42,51,59,0.4);
-  transition: all 1s;
+  transition: all 0.3s;
   background-color: #719e40;  
 }
 
 #username:focus {
-  box-shadow: 0px 6px 0px #103b14;
+  box-shadow: 0 17px 17px -15px rgba(42,51,59,0.7), inset 0 -3px rgba(42,51,59,0.4);
   outline: none;
   background-color: #9dd660;
 }
