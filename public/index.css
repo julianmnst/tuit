@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-  color: #6db422;
+  color: #2272bd;
   letter-spacing: -3px;
   font-family: 'Lato', sans-serif;
   font-size: 100px;
@@ -26,7 +26,7 @@ body {
 }
 
 h5 {
-  color: #719e40;
+  color: #3a8ca5;
   font-family: 'Lato', sans-serif;
   font-weight: 600;
   margin-bottom: 10;
@@ -66,11 +66,11 @@ a:hover {
   max-width: 285px;
   min-height: 50px;
   text-align: center;
+  font-weight: bold;
   transition: all .3s;
-  margin-top: 17px;
   margin-bottom: 17px;
   cursor: pointer;
-  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.568);
+  /* text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.568); */
 }
 
 .tweet:hover {
@@ -89,7 +89,7 @@ a:hover {
 button.retweet {
   border: none;
   outline: none;
-  background-color: #fb1a1acb;
+  background-color: #3a8ca5;
   color: white;
   margin-right: 3px;
   border-radius: 2px;
@@ -102,17 +102,19 @@ button.retweet:hover {
 }
 
 .rt-user {
-  text-shadow: 0px 1px 4px black;
+  text-decoration: underline;
 }
 
 #get-tweets {
   color: white;
   cursor: pointer;
   border: none;
-  background-color: #719e40;
-  margin-left: 12px;
-  width: 90px;
-  height: 30px;
+  background-color: #3974f5;
+  margin-left: 6px;
+  position: relative;
+  bottom: 1px;
+  width: 40px;
+  height: 40px;
   border-radius: 2px;
   font-weight: bold;
   box-shadow: 0 200px 200px -15px rgba(42,51,59,0.7), inset 0 -5px rgba(42,51,59,0.4);
@@ -131,6 +133,34 @@ button.retweet:hover {
   box-shadow: 0 17px 17px -15px rgba(42,51,59,0.7), inset 0 -3px rgba(42,51,59,0.4);
 }
 
+button#clear {
+  color: white;
+  cursor: pointer;
+  border: none;
+  background-color: #f53939;
+  margin-left: 6px;
+  position: relative;
+  bottom: 1px;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  font-weight: bold;
+  box-shadow: 0 200px 200px -15px rgba(42,51,59,0.7), inset 0 -5px rgba(42,51,59,0.4);
+  transition: all 0.3s cubic-bezier(0, 0.35, 0.5, 1);
+  outline: none;
+}
+
+button#clear:hover {
+  outline: none;
+  transform: scale(1.23);
+  box-shadow: 0 22px 22px -15px rgba(42,51,59,0.7), inset 0 -5px rgba(42,51,59,0.4);
+}
+
+button#clear:active {
+  transform: scale(1);
+  box-shadow: 0 17px 17px -15px rgba(42,51,59,0.7), inset 0 -3px rgba(42,51,59,0.4);
+}
+
 #username {
   text-align: center;
   color: #fff;
@@ -139,16 +169,17 @@ button.retweet:hover {
   padding: 5px;
   border: none;
   border-radius: 2px;
+  width: 120px;
   height: 30px;
   box-shadow: 0 200px 200px -15px rgba(42,51,59,0.7), inset 0 -5px rgba(42,51,59,0.4);
   transition: all 0.3s;
-  background-color: #719e40;  
+  background-color: #3974f5;
 }
 
 #username:focus {
   box-shadow: 0 17px 17px -15px rgba(42,51,59,0.7), inset 0 -3px rgba(42,51,59,0.4);
   outline: none;
-  background-color: #9dd660;
+  background-color: #1153e0;
 }
 
 @keyframes appear {

@@ -11,14 +11,18 @@
   <body>
     <h1>Tuit <i class="fab fa-twitter"></i></h1>
 
-    <div class="container">
-      <h5>Enter a valid twitter username to fetch it's latest tweets</h5>
+    <div class="container" id="navbar">
+      <h5>Enter a valid twitter username</h5>
       <input type="text" id="username" autocomplete="off">
-      <button id="get-tweets">Get Tweets</button>
+      <button id="get-tweets"><i class="fas fa-search"></i></h1></button>
     </div>
 
     <div id="container" class="container"></div>
   </body>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
   <script src="./index.js">
   </script>
   <script src="./utils.js">

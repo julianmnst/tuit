@@ -31,7 +31,7 @@ function getTweets() {
 
       if (isReTweet) {
         formattedTweet += '<button class="retweet">RT</button><span class="rt-user">';
-        tweet.text = tweet.text.replace(':', ': </span><br/>')
+        tweet.text = tweet.text.replace(':', '</span>:<br/>')
       }
 
       formattedTweet += isReTweet ? tweet.text.replace('RT ', '') : tweet.text;
@@ -47,6 +47,26 @@ function getTweets() {
 
 get_tweets.addEventListener('click', function(e) {
   getTweets();
+})
+
+function onClick() {
+
+}
+
+$('#username').on('input', function(event){
+    if (!$('#clear').length && event.target.value !== '') {
+        $('#navbar').append($(`
+          <button id="clear"><i class="fas fa-times"></i></button>
+        `).on('click', function(){
+            $('#username').val('');
+            $('#clear').remove();
+            $('#container').empty();
+        }))
+    }
+    else if($('#clear').length && event.target.value === '') {
+        $('#clear').remove()
+    }
+
 })
 
 function revealList(list, interval) {
