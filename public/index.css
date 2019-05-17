@@ -1,11 +1,14 @@
 body {
-  margin: 50px 0 0 0;
   padding: 0;
   width: 100%;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
   color: #aaa;
   font-size: 18px;
+  animation: appear 1s;
+  animation-fill-mode: forwards;
+  position: relative;
+  overflow: auto;
+  font-family: 'Lato', sans-serif;
 }
 
 h1 {
@@ -15,17 +18,21 @@ h1 {
   font-size: 100px;
   font-weight: 200;
   margin-bottom: 0;
+  transition: all .3s;
 }
 
-body {
-  animation: appear 1s;
-  animation-fill-mode: forwards;
-  position: relative;
-  overflow: auto;
-  font-family: 'Lato', sans-serif;
+h1.small {
+    transform: scale(0.9);
+    margin-top: -10px;
+}
+
+h5.small {
+    opacity: 0;
+  margin-bottom: 0;
 }
 
 h5 {
+  opacity: 1;
   color: #3a8ca5;
   font-family: 'Lato', sans-serif;
   font-weight: 600;
@@ -50,6 +57,7 @@ a:hover {
   margin-bottom: 30px;
   width: 100%;
   text-align: center;
+  transition: all .3s;
 }
 
 .tweet {
@@ -180,6 +188,11 @@ button#clear:active {
   box-shadow: 0 17px 17px -15px rgba(42,51,59,0.7), inset 0 -3px rgba(42,51,59,0.4);
   outline: none;
   background-color: #1153e0;
+}
+
+#navbar.small {
+    transform: scale(0.9);
+    margin-top: -25px;
 }
 
 @keyframes appear {

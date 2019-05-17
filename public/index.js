@@ -47,11 +47,8 @@ function getTweets() {
 
 get_tweets.addEventListener('click', function(e) {
   getTweets();
+  $('h1, h5, #navbar').addClass('small')
 })
-
-function onClick() {
-
-}
 
 $('#username').on('input', function(event){
     if (!$('#clear').length && event.target.value !== '') {
@@ -61,6 +58,7 @@ $('#username').on('input', function(event){
             $('#username').val('');
             $('#clear').remove();
             $('#container').empty();
+            $('h1.small, h5.small, #navbar.small').removeClass('small')
         }))
     }
     else if($('#clear').length && event.target.value === '') {
